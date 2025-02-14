@@ -3,17 +3,21 @@
   --yes-scale: 1; /* Default button size */
 }
 
-.App {
-  text-align: center;
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent scrolling */
 }
 
-.container{
-  padding: 1px;
+.App {
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .App-header {
   background: linear-gradient(to bottom, #ff9a9e, #fecfef);
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,7 +33,7 @@
   font-size: 3rem;
   text-shadow: 2px 2px 4px #ff4d6d;
   margin-bottom: 30px;
-  margin-top: 200px;
+  margin-top: 20vh;
 }
 
 .buttons {
@@ -114,30 +118,49 @@
 }
 
 /* Floating Hearts Background */
-.hearts-background::before {
-  content: "❤️ 💕 💖 💗 💘 💞";
+.hearts-background {
   position: absolute;
-  top: 0;
+  top: 5%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 5rem;
-  opacity: 0.3;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  pointer-events: none;
+}
+.hearts-background-2 {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.heart {
+  font-size: 4rem;
+  opacity: 0.6;
   animation: floatHearts 5s infinite alternate ease-in-out;
 }
 
+.heart:nth-child(2) { animation-duration: 6s; transform: translateY(10px); }
+.heart:nth-child(3) { animation-duration: 4.5s; transform: translateY(-15px); }
+.heart:nth-child(4) { animation-duration: 5.2s; transform: translateY(5px); }
+
 @keyframes floatHearts {
-  from {
-    transform: translate(-50%, 0);
-  }
-  to {
-    transform: translate(-50%,30px);
-  }
+  from { transform: translateY(0); }
+  to { transform: translateY(-30px); }
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
   .valentine-text {
     font-size: 2rem;
+    margin-top: 25vh;
   }
 
   .yes-button,
@@ -146,7 +169,11 @@
     padding: 10px 20px;
   }
 
-  .hearts-background::before {
-    font-size: 3rem;
+  .hearts-background {
+    top: 2%;
+  }
+
+  .heart {
+    font-size: 2.5rem;
   }
 }

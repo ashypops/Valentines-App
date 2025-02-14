@@ -105,10 +105,29 @@ function App() {
     return (
         <div className="App">
             <div className="App-header">
-                <div className="title">
-                    <h1 className="valentine-text">Will you be my Valentine? 💖</h1>
+                <div className="hearts-background">
+                    <span className="heart">❤️</span>
+                    <span className="heart">💕</span>
+                    <span className="heart">💖</span>
+                    <span className="heart">💗</span>
+                    <span className="heart">💘</span>
+                    <span className="heart">❤️</span>
+                    <span className="heart">💕</span>
+                    <span className="heart">💖</span>
+                    <span className="heart">💗</span>
+                    <span className="heart">💘</span>
                 </div>
-
+                <div className="hearts-background-2">
+                    <span className="heart">💘</span>
+                    <span className="heart">💗</span>
+                    <span className="heart">💕</span>
+                    <span className="heart">💖</span>
+                    <span className="heart">💗</span>
+                    <span className="heart">💘</span>
+                    <span className="heart">💕</span>
+                    <span className="heart">💖</span>
+                </div>
+                    <h1 className="valentine-text">Will you be my Valentine? 💖</h1>
                 {isAccepted ? (
                     <div className="funny-message">
                         <div className="gif-container">
@@ -117,7 +136,7 @@ function App() {
                             <img src="/right-gif.gif" alt="Happy Dance GIF" className="side-gif right-gif" />
                         </div>
                         <p>There's no backing out now! 😆💘</p>
-                        <p>Get ready for endless back tickles & romantic memes! 🍫😂</p>
+                        <p>Get ready for endless back chocolates & romantic memes! 🍫😂</p>
                     </div>
                 ) : (
                     <>
